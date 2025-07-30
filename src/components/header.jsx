@@ -1,4 +1,5 @@
 import Styles from '../css/header.module.css';
+import {Link} from 'react-router-dom';
 const Header = ({ toggleSidebar }) => {
   return (
     <>
@@ -6,7 +7,7 @@ const Header = ({ toggleSidebar }) => {
         <div className="container-fluid d-flex align-items-center">
 
           {/* 왼쪽 끝: 로고 */}
-          <a className="navbar-brand" href="/">웹사이트</a>
+          <Link to="/" className="navbar-brand">웹 사이트</Link>
 
           {/* 오른쪽 끝으로 밀기 */}
           <div className="d-flex align-items-center ms-auto">
@@ -18,6 +19,9 @@ const Header = ({ toggleSidebar }) => {
 
             {/* 내비게이션 메뉴 */}
             <ul className="navbar-nav d-flex flex-row mb-0">
+              <li className="nav-item me-3">
+                <Link to="/signin" className="nav-link active" aria-current="page">로그인</Link>
+              </li>
               <li className="nav-item me-3">
                 <a className="nav-link active" aria-current="page" href="/">내 정보</a>
               </li>
